@@ -1,0 +1,58 @@
+import { Calculator, ShieldCheck, FileCheck, Eye } from 'lucide-react';
+
+const REASONS = [
+  {
+    icon: Calculator,
+    title: 'Plain Numbers Upfront',
+    desc: 'Our calculators use standard, published reducing-balance formulas and display the full principal and interest breakdown.'
+  },
+  {
+    icon: Eye,
+    title: 'Estimates Are Clear',
+    desc: 'Any illustrative or estimated figure is labelled explicitly, so you always know what is indicative and what is contractual.'
+  },
+  {
+    icon: FileCheck,
+    title: 'No Obligation to Enquire',
+    desc: 'Submit your requirements once to compare loan options without paying brokerage fees or committing to an offer.'
+  },
+  {
+    icon: ShieldCheck,
+    title: 'You Review Every Term',
+    desc: 'Loan approval, interest rates, and final terms remain decisions made by lenders. You review the complete sanction letter before accepting.'
+  }
+];
+
+export default function HomeWhyFinora() {
+  return (
+    <section className="section sec-ivory" id="why-finora" aria-labelledby="why-finora-heading">
+      <div className="container">
+        <div className="section-head text-center">
+          <span className="eyebrow">Trust &amp; Transparency</span>
+          <h2 id="why-finora-heading" className="section-title">
+            Why Borrowers Choose Finora
+          </h2>
+          <p className="section-subtitle">
+            What you should expect from a financial platform: plain language, transparent figures, and customer-first clarity.
+          </p>
+        </div>
+
+        <div className="why-finora-grid">
+          {REASONS.map((r, i) => {
+            const Icon = r.icon;
+            return (
+              <div key={r.title} className="why-card">
+                <div className="why-icon-wrap" aria-hidden="true">
+                  <Icon size={24} className="why-icon" />
+                </div>
+                <span className="why-number" aria-hidden="true">0{i + 1}</span>
+                <h3 className="why-title">{r.title}</h3>
+                <p className="why-desc">{r.desc}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
