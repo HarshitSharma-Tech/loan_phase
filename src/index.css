@@ -1079,7 +1079,8 @@ ul, ol { list-style: none; }
     0 4px 16px rgba(32, 41, 35, 0.04);
 }
 
-.arch-portal-img {
+.arch-portal-img,
+.arch-portal-video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1091,10 +1092,56 @@ ul, ol { list-style: none; }
   pointer-events: none;
 }
 
-.arch-portal-img.is-active {
+.arch-portal-img.is-active,
+.arch-portal-video.is-active {
   opacity: 1;
   transform: scale(1);
   pointer-events: auto;
+}
+
+.arch-portal-controls {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arch-media-ctrl-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(16, 28, 24, 0.65);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.arch-media-ctrl-btn:hover {
+  background: var(--color-bronze);
+  border-color: var(--color-bronze);
+  transform: scale(1.06);
+}
+
+.arch-film-pill {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  background: rgba(164, 123, 77, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
 }
 
 .arch-portal-overlay {

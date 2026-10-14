@@ -1,16 +1,18 @@
-import { useState, useEffect } from 'react';
-import { ArrowRight, CheckCircle2, Building2, Home, Car, Compass } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { ArrowRight, CheckCircle2, Building2, Home, Car, Compass, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 
 const ARCH_VISTAS = [
   {
-    id: 'sanctuary',
+    id: 'film',
     title: 'Architectural Sanctuaries',
     subtitle: 'Residential & Custom Estate Financing',
     rate: 'From 8.40% p.a.',
     tenure: 'Up to 30 Years',
-    image: '/assets/hero-sequence/hero_stage_1.jpg',
+    video: '/assets/videos/finora_dream_home_website.mp4',
+    poster: '/assets/hero-sequence/hero_stage_1.jpg',
     tagline: 'Private villas & custom residential architecture',
-    icon: Home
+    icon: Home,
+    isVideo: true
   },
   {
     id: 'capital',
@@ -46,14 +48,39 @@ const ARCH_VISTAS = [
 
 export default function HomeHero() {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
 
-  // Subtle auto-advance every 7 seconds if user does not interact
+  // If user switches away from video tab, handle playback
   useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveIdx((prev) => (prev + 1) % ARCH_VISTAS.length);
-    }, 7000);
-    return () => clearInterval(timer);
-  }, []);
+    if (ARCH_VISTAS[activeIdx].isVideo && videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.play().catch(() => {});
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [activeIdx, isPlaying]);
+
+  const togglePlay = (e) => {
+    e.stopPropagation();
+    if (!videoRef.current) return;
+    if (isPlaying) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      videoRef.current.play().catch(() => {});
+      setIsPlaying(true);
+    }
+  };
+
+  const toggleMute = (e) => {
+    e.stopPropagation();
+    if (!videoRef.current) return;
+    videoRef.current.muted = !isMuted;
+    setIsMuted(!isMuted);
+  };
 
   const activeVista = ARCH_VISTAS[activeIdx];
 
@@ -101,20 +128,59 @@ export default function HomeHero() {
           </div>
         </div>
 
-        {/* Right Immersive Architectural Imagery */}
+        {/* Right Immersive Architectural Imagery / Video Frame */}
         <div className="arch-hero-visual-frame">
           <div className="arch-hero-portal">
-            {ARCH_VISTAS.map((vista, idx) => (
+            {/* Cinematic Background Video in Portal Frame */}
+            <video
+              ref={videoRef}
+              className={`arch-portal-video ${activeVista.isVideo ? 'is-active' : ''}`}
+              src="/assets/videos/finora_dream_home_website.mp4"
+              poster="/assets/hero-sequence/hero_stage_1.jpg"
+              autoPlay
+              loop
+              muted={isMuted}
+              playsInline
+              preload="metadata"
+            />
+
+            {/* Static Photographic Vistas for Other Tabs */}
+            {ARCH_VISTAS.filter((v) => !v.isVideo).map((vista) => (
               <img
                 key={vista.id}
                 src={vista.image}
                 alt={vista.title}
-                className={`arch-portal-img ${idx === activeIdx ? 'is-active' : ''}`}
-                loading={idx === 0 ? 'eager' : 'lazy'}
+                className={`arch-portal-img ${vista.id === activeVista.id ? 'is-active' : ''}`}
+                loading="lazy"
               />
             ))}
             
             <div className="arch-portal-overlay" />
+
+            {/* Video Playback Controls (Visible when video vista active) */}
+            {activeVista.isVideo && (
+              <div className="arch-portal-controls">
+                <button
+                  type="button"
+                  className="arch-media-ctrl-btn"
+                  onClick={togglePlay}
+                  aria-label={isPlaying ? 'Pause brand film' : 'Play brand film'}
+                  title={isPlaying ? 'Pause' : 'Play'}
+                >
+                  {isPlaying ? <Pause size={14} /> : <Play size={14} />}
+                </button>
+                <button
+                  type="button"
+                  className="arch-media-ctrl-btn"
+                  onClick={toggleMute}
+                  aria-label={isMuted ? 'Unmute sound' : 'Mute sound'}
+                  title={isMuted ? 'Unmute' : 'Mute'}
+                >
+                  {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
+                </button>
+                <span className="arch-film-pill">Cinematic Film</span>
+              </div>
+            )}
 
             {/* Architectural Floating Specification Badge */}
             <div className="arch-portal-badge">
