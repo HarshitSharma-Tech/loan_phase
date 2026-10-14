@@ -17,7 +17,7 @@ const STAGES = [
     tag: 'Institutional Wealth & Lending',
     serifLine1: 'Your financial future,',
     italicAccent: 'within reach.',
-    desc: 'Explore bespoke financial solutions for the landmark goals, commercial opportunities, and milestones that matter to you. Transparent borrowing designed around your lifetime ambitions.',
+    desc: 'Structured borrowing and bespoke private capital designed around the landmark acquisitions, architectural residences, and enterprise milestones that define your life.',
     hasCtas: true,
     trustLine: 'Transparent reducing calculations • Clear terms upfront • Non-binding enquiries',
     progressTarget: 0.05
@@ -26,8 +26,8 @@ const STAGES = [
     id: 'dream',
     badge: '• BESPOKE RESIDENTIAL FINANCING • RATES FROM 8.40% P.A.',
     tag: 'Architectural Sanctuaries',
-    serifLine1: 'Dreaming of',
-    italicAccent: 'something more?',
+    serifLine1: 'Life’s milestones,',
+    italicAccent: 'made possible.',
     desc: 'Step into the residence you have always envisioned with low-interest, institutional home loans structured for extended peace of mind and family security.',
     hasCtas: false,
     exploreText: 'Explore Home Loans',
@@ -38,7 +38,7 @@ const STAGES = [
   {
     id: 'ambition',
     badge: '• EXECUTIVE MOBILITY & ASSET EXPANSION • 10-MIN SANCTION',
-    tag: 'Personal Ambitions',
+    tag: 'Executive Mobility',
     serifLine1: 'Make your ambitions',
     italicAccent: 'possible.',
     desc: 'Accelerate your milestone investments, luxury mobility, and enterprise scaling with dedicated private capital advisory and 10-minute digital sanction.',
@@ -51,7 +51,7 @@ const STAGES = [
   {
     id: 'next-move',
     badge: '• PRIVATE WEALTH CAPITAL • 100% TRANSPARENT ENQUIRY',
-    tag: 'Your Next Chapter',
+    tag: 'Skyward Horizons',
     serifLine1: 'Your next move',
     italicAccent: 'starts here.',
     desc: 'Structured borrowing designed around your lifetime goals, wealth compounding, and multi-generational security with zero hidden fees.',
