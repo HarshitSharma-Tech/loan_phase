@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="footer-brand">
           <a className="footer-brand-link" href="#/" aria-label="Finora — Financing A Brighter Tomorrow">
             <img
-              src="/finora-logo.png"
+              src="/finora-logo-dark.png"
               alt="Finora"
               className="brand-logo-footer"
               width="142"

@@ -42,11 +42,19 @@ export default function ApplicationSteps() {
   }, []);
 
   return (
-    <section className="section sec-light" id="process" aria-labelledby="process-title">
+    <section className="section sec-stone" id="process" aria-labelledby="process-title">
       <div className="container">
-        <div className="section-head" data-reveal>
-          <p className="eyebrow dark">How it works</p>
-          <h2 id="process-title">Four clear steps from idea to decision.</h2>
+        <div className="section-head text-center" data-reveal>
+          <div className="arch-section-label justify-center">
+            <span className="label-line" />
+            <span>HOW IT WORKS // THE DISBURSEMENT PATHWAY</span>
+          </div>
+          <h2 id="process-title" className="arch-section-title">
+            Four Definitive Steps from Ambition to Sanction
+          </h2>
+          <p className="arch-section-subtitle">
+            An institutional, transparent borrowing experience with zero surprises. Know your terms before you commit.
+          </p>
         </div>
         <ol ref={ref} className="steps" style={{ '--p': 0 }}>
           <span className="steps-track" aria-hidden="true"><span className="steps-fill" /></span>

@@ -1,15 +1,14 @@
-import { ArrowRight, BookOpen, Bookmark } from 'lucide-react';
+import { ArrowRight, BookOpen } from 'lucide-react';
 
-const ENTRIES = [
+const MILESTONES = [
   {
-    vol: 'VOL. I',
-    page: 'PAGE 01',
-    chapter: 'Chapter I // Residential Sanctuary',
+    chapter: 'CHAPTER 01',
+    category: 'Residential Sanctuary',
     rate: 'From 8.40% p.a.',
     title: 'Residential & Custom Architectural Financing',
     narrative: '“Building our home was never just about bricks and mortar; it was about designing our sanctuary.” Access competitive floating and fixed home loans structured for extended peace of mind.',
     image: '/assets/images/indian_family_home.jpg',
-    imageAlt: 'Contemporary family sanctuary residence',
+    imageAlt: 'Family enjoying modern sunlit architectural living sanctuary',
     specs: [
       { label: 'Tenure Horizon', value: 'Up to 30 Years' },
       { label: 'Sanction Ceiling', value: 'Up to ₹10 Crore' },
@@ -21,14 +20,13 @@ const ENTRIES = [
     secondaryLabel: 'Calculate EMI'
   },
   {
-    vol: 'VOL. II',
-    page: 'PAGE 02',
-    chapter: 'Chapter II // Commercial Scale',
+    chapter: 'CHAPTER 02',
+    category: 'Commercial Velocity',
     rate: 'From 12.50% p.a.',
     title: 'Business & Commercial Expansion Credit',
     narrative: '“Scale demands velocity.” Collateral-free working capital, machinery term loans, and credit facilities tailored to accelerate operational growth and supply-chain liquidity.',
     image: '/assets/images/indian_business_owner.jpg',
-    imageAlt: 'Business founders scaling enterprise operations',
+    imageAlt: 'Business leaders scaling corporate operations',
     specs: [
       { label: 'Tenure Horizon', value: 'Up to 7 Years' },
       { label: 'Sanction Ceiling', value: 'Up to ₹5 Crore' },
@@ -40,18 +38,17 @@ const ENTRIES = [
     secondaryLabel: 'Calculate EMI'
   },
   {
-    vol: 'VOL. III',
-    page: 'PAGE 03',
-    chapter: 'Chapter III // Personal Horizon',
+    chapter: 'CHAPTER 03',
+    category: 'Personal Horizon',
     rate: 'From 10.49% p.a.',
     title: 'Bespoke Milestone & Lifestyle Credit',
-    narrative: '“Every personal milestone deserves unhindered momentum.” Unsecured individual capital for life celebrations, medical contingencies, higher education, or living space upgrades.',
+    narrative: '“Every personal ambition deserves unhindered momentum.” Unsecured individual capital for milestone acquisitions, international education, medical contingencies, or residence upgrades.',
     image: '/assets/images/personal_lifestyle_loan.jpg',
-    imageAlt: 'Personal lifestyle and life milestones',
+    imageAlt: 'Personal lifestyle aspirations and milestones',
     specs: [
       { label: 'Tenure Horizon', value: 'Up to 5 Years' },
       { label: 'Sanction Ceiling', value: 'Up to ₹40 Lakh' },
-      { label: 'Security Deposit', value: 'Zero Collateral', highlight: true }
+      { label: 'Collateral Terms', value: 'Zero Security', highlight: true }
     ],
     primaryHref: '#/loans/loan-personal',
     primaryLabel: 'Explore Personal Credit',
@@ -59,18 +56,17 @@ const ENTRIES = [
     secondaryLabel: 'Calculate EMI'
   },
   {
-    vol: 'VOL. IV',
-    page: 'PAGE 04',
-    chapter: 'Chapter IV // Asset Equity',
+    chapter: 'CHAPTER 04',
+    category: 'Asset Liquidity',
     rate: 'From 9.20% p.a.',
     title: 'Loan Against Property & Liquid Equity',
-    narrative: '“Unlocking value from the assets you’ve already created.” High-value liquidity secured against residential, commercial, or plot real estate with prolonged amortization flexibility.',
+    narrative: '“Unlocking value from the assets you’ve already created.” High-value liquidity secured against residential or commercial real estate with extended amortization flexibility.',
     image: '/assets/images/property_lap_sanctuary.jpg',
-    imageAlt: 'Prime architectural property equity liquidity',
+    imageAlt: 'Prime architectural property equity portfolio',
     specs: [
       { label: 'Tenure Horizon', value: 'Up to 20 Years' },
       { label: 'Sanction Ceiling', value: 'Up to ₹15 Crore' },
-      { label: 'Loan-to-Value (LTV)', value: 'Up to 75%', highlight: true }
+      { label: 'Loan-to-Value', value: 'Up to 75% LTV', highlight: true }
     ],
     primaryHref: '#/loans/loan-lap',
     primaryLabel: 'Explore Property Equity',
@@ -81,73 +77,70 @@ const ENTRIES = [
 
 export default function HomeFeaturedLoans() {
   return (
-    <section className="section sec-diary" id="featured-loans" aria-labelledby="diary-loans-heading">
+    <section className="arch-milestones-section" id="featured-loans" aria-labelledby="milestones-heading">
       <div className="container">
-        {/* Section Header styled as an editorial journal introduction */}
-        <div className="section-head text-center diary-head">
-          <div className="diary-eyebrow">
-            <Bookmark size={14} className="gold-accent" aria-hidden="true" />
-            <span>The Finora Chronicles • Life Milestone Diary</span>
+        {/* Editorial Section Header */}
+        <div className="arch-section-header">
+          <div className="arch-section-label">
+            <span className="label-line" />
+            <span>FINORA PORTFOLIO // DEFINING CHAPTERS</span>
           </div>
-          <h2 id="diary-loans-heading" className="section-title diary-title">
-            Life’s Milestones, Recorded in Capital
+
+          <h2 id="milestones-heading" className="arch-section-title">
+            Life’s Milestones, Made Possible.
           </h2>
-          <p className="section-subtitle diary-subtitle">
-            Every meaningful journey begins as an ambition written in a journal. Explore structured institutional financing designed around each defining chapter of your life.
+
+          <p className="arch-section-subtitle">
+            Every meaningful journey begins with an ambition. Discover structured institutional lending designed around the defining milestones of your life with clear reducing terms and lifetime flexibility.
           </p>
         </div>
 
-        {/* Balanced 2x2 Diary Grid */}
-        <div className="diary-grid">
-          {ENTRIES.map((entry) => (
-            <article className="diary-entry-card" key={entry.vol}>
-              {/* Hanging Satin Bookmark Ribbon */}
-              <div className="diary-bookmark-ribbon" aria-hidden="true">
-                <span className="ribbon-text">{entry.vol}</span>
-              </div>
-
-              {/* Card Banner Media */}
-              <div className="diary-media-wrap" aria-hidden="true">
+        {/* 2 Balanced Rows of Framed Photo Cards */}
+        <div className="arch-milestones-grid">
+          {MILESTONES.map((item) => (
+            <article className="arch-editorial-card" key={item.chapter}>
+              {/* Photo Frame in Each Card (Refined 16:10 Aspect Ratio) */}
+              <div className="arch-card-frame">
                 <img
-                  src={entry.image}
-                  alt={entry.imageAlt}
-                  className="diary-entry-img"
+                  src={item.image}
+                  alt={item.imageAlt}
+                  className="arch-card-photo"
                   loading="lazy"
                 />
-                <div className="diary-img-vignette" />
-                <div className="diary-page-stamp">{entry.page}</div>
+                <div className="arch-photo-overlay" />
+                <span className="arch-photo-badge">{item.chapter}</span>
               </div>
 
-              {/* Card Body */}
-              <div className="diary-body">
-                <div className="diary-entry-meta">
-                  <span className="diary-chapter-label">{entry.chapter}</span>
-                  <span className="diary-rate-badge">{entry.rate}</span>
+              {/* Card Content Spread */}
+              <div className="arch-card-content">
+                <div className="arch-card-meta">
+                  <span className="arch-category-tag">{item.category}</span>
+                  <span className="arch-rate-pill">{item.rate}</span>
                 </div>
 
-                <h3 className="diary-entry-heading">{entry.title}</h3>
-                
-                <p className="diary-entry-narrative">{entry.narrative}</p>
+                <h3 className="arch-card-heading">{item.title}</h3>
 
-                {/* 3-Column Structured Financial Specs */}
-                <div className="diary-ledger-specs">
-                  {entry.specs.map((spec) => (
-                    <div className="diary-spec-item" key={spec.label}>
-                      <span className="diary-spec-label">{spec.label}</span>
-                      <strong className={`diary-spec-val ${spec.highlight ? 'highlight-gold' : ''}`}>
+                <p className="arch-card-narrative">{item.narrative}</p>
+
+                {/* Structured Financial Specs Ledger */}
+                <div className="arch-specs-ledger">
+                  {item.specs.map((spec) => (
+                    <div className="arch-spec-col" key={spec.label}>
+                      <span className="arch-spec-lbl">{spec.label}</span>
+                      <strong className={`arch-spec-data ${spec.highlight ? 'is-highlight' : ''}`}>
                         {spec.value}
                       </strong>
                     </div>
                   ))}
                 </div>
 
-                {/* Card Actions */}
-                <div className="diary-card-actions">
-                  <a href={entry.primaryHref} className="btn btn-gold btn-md">
-                    {entry.primaryLabel} <ArrowRight size={16} aria-hidden="true" />
+                {/* Card Action Controls */}
+                <div className="arch-card-actions">
+                  <a href={item.primaryHref} className="btn btn-bronze btn-md">
+                    {item.primaryLabel} <ArrowRight size={16} aria-hidden="true" />
                   </a>
-                  <a href={entry.secondaryHref} className="diary-action-link">
-                    {entry.secondaryLabel} <ArrowRight size={14} aria-hidden="true" />
+                  <a href={item.secondaryHref} className="arch-link-secondary">
+                    {item.secondaryLabel} <ArrowRight size={14} aria-hidden="true" />
                   </a>
                 </div>
               </div>
@@ -155,14 +148,14 @@ export default function HomeFeaturedLoans() {
           ))}
         </div>
 
-        {/* Diary Catalog Navigation Strip */}
-        <div className="diary-ledger-strip">
-          <div className="strip-info">
-            <BookOpen size={20} className="gold-accent" aria-hidden="true" />
-            <span>Browse the complete archive of 12 financing chapters (Education, Vehicle, Gold &amp; Professional)</span>
+        {/* Editorial Archive Bottom Bar */}
+        <div className="arch-archive-bar">
+          <div className="archive-bar-info">
+            <BookOpen size={20} className="archive-icon" aria-hidden="true" />
+            <span>Browse our comprehensive portfolio of 12 financing solutions including Education, Mobility &amp; Professional Credit</span>
           </div>
-          <a href="#/loans" className="btn btn-primary btn-sm">
-            View Complete Archive <ArrowRight size={16} aria-hidden="true" />
+          <a href="#/loans" className="btn btn-outline-charcoal btn-sm">
+            View Complete Archive <ArrowRight size={15} aria-hidden="true" />
           </a>
         </div>
       </div>

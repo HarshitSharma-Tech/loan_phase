@@ -40,14 +40,17 @@ export default function Faq() {
   const base = useId();
 
   return (
-    <section className="section sec-travertine" id="faq" aria-labelledby="faq-title">
+    <section className="section sec-ivory" id="faq" aria-labelledby="faq-title">
       <div className="container narrow">
         <div className="section-head text-center" data-reveal>
-          <span className="eyebrow">Clarity & Confidence</span>
-          <h2 id="faq-title" className="section-title-refined">
+          <div className="arch-section-label justify-center">
+            <span className="label-line" />
+            <span>CLARITY &amp; CONFIDENCE // ADVISORY FAQ</span>
+          </div>
+          <h2 id="faq-title" className="arch-section-title">
             Frequently Asked Questions
           </h2>
-          <p className="section-subtitle-refined">
+          <p className="arch-section-subtitle">
             Straightforward answers to the most important financing, credit assessment, and wealth preservation questions before you sign an agreement.
           </p>
         </div>

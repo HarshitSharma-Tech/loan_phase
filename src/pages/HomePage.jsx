@@ -1,4 +1,4 @@
-import HomeHeroSequence from '../components/home/HomeHeroSequence';
+import HomeHero from '../components/home/HomeHero';
 import HomeFeaturedLoans from '../components/home/HomeFeaturedLoans';
 import ApplicationSteps from '../components/ApplicationSteps';
 import HomeEmiPreview from '../components/home/HomeEmiPreview';
@@ -9,7 +9,7 @@ import HomeCta from '../components/home/HomeCta';
 export default function HomePage() {
   return (
     <>
-      <HomeHeroSequence />
+      <HomeHero />
       <HomeFeaturedLoans />
       <ApplicationSteps />
       <HomeEmiPreview />

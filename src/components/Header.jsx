@@ -37,11 +37,11 @@ export default function Header({ page }) {
       <div className="container header-inner">
         <a className="brand" href="#/" aria-label="Finora — Financing A Brighter Tomorrow">
           <img
-            src="/finora-logo-dark.png"
+            src="/finora-logo-transparent.png"
             alt="Finora"
             className="brand-logo"
-            width="136"
-            height="46"
+            width="142"
+            height="44"
           />
         </a>
 

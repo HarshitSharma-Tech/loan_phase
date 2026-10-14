@@ -25,15 +25,18 @@ const REASONS = [
 
 export default function HomeWhyFinora() {
   return (
-    <section className="section sec-ivory" id="why-finora" aria-labelledby="why-finora-heading">
+    <section className="section sec-stone" id="why-finora" aria-labelledby="why-finora-heading">
       <div className="container">
         <div className="section-head text-center">
-          <span className="eyebrow">Trust &amp; Transparency</span>
-          <h2 id="why-finora-heading" className="section-title">
-            Why Borrowers Choose Finora
+          <div className="arch-section-label justify-center">
+            <span className="label-line" />
+            <span>INSTITUTIONAL INTEGRITY // CLIENT ADVOCACY</span>
+          </div>
+          <h2 id="why-finora-heading" className="arch-section-title">
+            Why Discerning Borrowers Choose Finora
           </h2>
-          <p className="section-subtitle">
-            What you should expect from a financial platform: plain language, transparent figures, and customer-first clarity.
+          <p className="arch-section-subtitle">
+            What you should expect from a premier financial advisory: transparent reducing-balance formulas, zero hidden charges, and sovereign data privacy.
           </p>
         </div>
 

@@ -17,15 +17,18 @@ export default function HomeEmiPreview() {
   const totalInterest = Math.max(totalPayment - P, 0);
 
   return (
-    <section className="section sec-white" id="calculator-preview" aria-labelledby="calc-preview-heading">
+    <section className="section sec-ivory" id="calculator-preview" aria-labelledby="calc-preview-heading">
       <div className="container">
         <div className="section-head text-center">
-          <span className="eyebrow">Calculators</span>
-          <h2 id="calc-preview-heading" className="section-title">
+          <div className="arch-section-label justify-center">
+            <span className="label-line" />
+            <span>FINANCIAL INTELLIGENCE // EMI CALCULATOR</span>
+          </div>
+          <h2 id="calc-preview-heading" className="arch-section-title">
             Estimate Your Monthly Commitment
           </h2>
-          <p className="section-subtitle">
-            Get an instant estimate of your monthly EMI using standard reducing-balance math before applying.
+          <p className="arch-section-subtitle">
+            Instant, transparent estimation using standard reducing-balance calculations before submitting an enquiry.
           </p>
         </div>
 
